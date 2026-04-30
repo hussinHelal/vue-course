@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="vue.png">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>VUE</title>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="https://unpkg.com/vue-router@4/dist/vue-router.global.js"></script>
+
+</head>
+<body>
+    <center style="margin-top: 80px">
+    <div id="app">      
+        
+        <router-view></router-view>
+        
+        <hr style="background-color: green; height: 1px;">
+        
+        <p>
+            <input type="text" v-model="greeting" style="width:300px;"/>
+        </p>
+
+        <p>
+            {{ greeting }} ( {{greeting.length}} )
+
+        </p> <hr style="background-color: green; height: 1px;">
+
+        <!-- <p>
+            {{ sayHi('hussien') }}
+        </p> -->
+
+        <!-- <hr style="background-color: green; height: 1px;"> -->
+
+        <!-- <p>
+             <h3>Calculator</h3>
+             <label for="firstNumber">firstNumber: </label>
+             <input type="number" v-model="firstNumber" id="firstNumber"> <br>
+             <label for="secondNumber">secondNumber: </label>
+             <input type="number" v-model="secondNumber" id="secondNumber"> <br>
+             <label for="operator">operator: </label>
+             <input type="text" v-model="operator" id="operator"> <br> 
+             <button @click="calculate">Calculate</button>
+             <br> 
+             <span> Result: {{ result }}</span>
+        </p>  -->
+        
+        <!-- <hr style="background-color: green; height: 1px;"> -->
+
+            <button @click="isActive=!isActive" > {{isActive ? 'Hide' : 'Show'}} </button>
+            <span style="color:blue" v-show="isActive">
+            <p>
+                <span style="color:red" > {{ count }}  </span><br> 
+                <button @click="count++">Count +</button> <br> 
+                <button v-if="count > 0" @click="count--">Count -</button> <br>
+                <button @click="count = 0">Count Reset</button> <br>
+
+            </p>
+            </span>
+                <hr style="background-color: green; height: 1px;">
+ 
+            <!-- <button @click="isActive = !isActive">Toggle Info</button>
+            
+            <p v-show="isActive">
+                <span>{{ name }}</span> <br>
+                <span>{{ age }}</span> <br>
+                    <span v-for="(tests,index) in completedTests " :key="index" style="color:blue">
+                        {{ tests.testName }} - {{ tests.score }} <br>
+                    </span> <br>
+            </p>
+            <hr style="background-color: green; height: 1px;">
+
+            <p>
+                <span>{{ date }}</span> <br>
+                <button @click="newDate" > Show Date</button>
+            </p> -->
+
+            <!-- <p v-html="test"> Howdy </p> -->
+
+            <!-- <hr style="background-color: green; height: 1px;"> -->
+
+            <!-- <p v-if="age > 50">You are Too old</p>
+            <p v-else-if="age > 15 && age < 40">You are a young adult</p>
+            <p v-else>You are not a young adult</p> -->
+
+
+            <!-- <p v-once> hello {{ name }} </p> -->
+
+            <a v-bind:href="imageUrl" target="_blank">
+                <img v-bind:src="imageSrc" v-bind:alt="imageAlt" style="width: 100px; height: 100px;">
+            </a>
+
+            <!-- <hr style="background-color: green; height: 1px;"> -->
+            <app-counter></app-counter>
+            <hr style="background-color: green; height: 1px;">
+            <!-- <app-greeting v-for="post in posts" :title="post.title" :author="post.author" :key="post.id"></app-greeting> -->
+            
+            <app-greeting ></app-greeting>
+            <hr style="background-color: green; height: 1px;">
+            <!--<input type="text" v-model="username" > <br>
+            {{ validateUserName }}
+            <hr style="background-color: green; height: 1px;">
+            <input type="text" v-model="eg" >
+            <p> {{ eg }} EGP = {{ egResult }} SAR </p> <br>
+            <input type="text" v-model="sar" >
+            <p> {{ sar }} SAR = {{ sarResult }} EGP </p> <br>
+            <hr style="background-color: green; height: 1px;">
+            <input type="text" v-model="hour" >
+            <p> {{ hour }} hour = {{ minute }} minute </p> <br>
+            <input type="text" v-model="minute" >
+            <p> {{ minute }} minute = {{ second }} second </p> <br>
+            <input type="text" v-model="second" >
+            <p> {{second}} second = {{ minute }} minute </p> <br>
+            <hr style="background-color: green; height: 1px;">-->
+      
+    </div>
+   </center>
+    <script type="module" src='main.js'></script>
+</body>
+</html>
